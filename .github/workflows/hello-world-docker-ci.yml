@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
     paths: [ hello-world-docker-action/** ]
-  workflow-dispatch:
+  workflow_dispatch:
   
 jobs:
   test-action:
@@ -13,11 +13,11 @@ jobs:
       - uses: actions/checkout@v3.3.0
       
       - name: run own action
-      - id: hello_action
-      - uses: ./hello-world-docker-action
-      - with:
-        who-to-greet: '@lambdaBoost'
+        id: hello_action
+        uses: ./hello-world-docker-action
+        with:
+          who-to-greet: '@lambdaBoost'
         
-      -name: output_time
+      - name: output_time
         run: echo "The time was ${{ steps.hello-action.outputs.time }} when the action said hello"
       
