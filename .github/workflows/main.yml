@@ -16,7 +16,7 @@ jobs:
     steps:
       - run: |
         echo "${{ github.event_name }} job triggered"
-        echo: "branch is ${{ github.ref }} repo is ."
+        echo "branch is ${{ github.ref }} repo is ."
         
       - uses: actions/checkout@v3.3.0
       - name: List files in repo
